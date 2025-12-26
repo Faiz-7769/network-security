@@ -1,3 +1,7 @@
 python-dotenv
 pandas
 numpy
+pymongo
+certifi
+
+#-e .#this triggers the setup.py and create whole package about dependencies
