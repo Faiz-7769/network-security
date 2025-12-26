@@ -4,5 +4,6 @@ numpy
 pymongo
 certifi
 pymongo[srv]
+scikit-learn
 
 #-e .#this triggers the setup.py and create whole package about dependencies
