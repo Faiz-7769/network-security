@@ -28,7 +28,6 @@ load_dotenv()
 
 import dagshub
 
-dagshub.init(repo_owner='Faiz-7769', repo_name='network-security', mlflow=True)
 
 os.environ["MLFLOW_TRACKING_URI"]= os.getenv("MLFLOW_TRACKING_URI")
 os.environ["MLFLOW_TRACKING_USERNAME"]="Faiz-7769"
@@ -47,6 +46,7 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
+        dagshub.init(repo_owner='Faiz-7769', repo_name='network-security', mlflow=True)
         mlflow.set_registry_uri(os.getenv("MLFLOW_TRACKING_URI"))
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():

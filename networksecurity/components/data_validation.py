@@ -12,10 +12,10 @@ from networksecurity.utils.main_utils.utils import read_yaml_file,write_yaml_fil
 
 class DataValidation:
     def __init__(self,data_ingestion_artifact:DataIngestionArtifact,
-                 data_validtion_config:DataValidationConfig):
+                 data_validation_config:DataValidationConfig):
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
-            self.data_validation_config = data_validtion_config
+            self.data_validation_config = data_validation_config
             self.schema_config = read_yaml_file(SCHEMA_FILE_PATH)
         except Exception as e:
             raise NetworkSecurityException(e,sys)
